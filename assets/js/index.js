@@ -6,6 +6,7 @@ let sliderList = slider.querySelector('.slider .list')
 let thumbnail = document.querySelector('.slider .thumbnail')
 let thumbnailItems = thumbnail.querySelectorAll('.item')
 
+
 thumbnail.appendChild(thumbnailItems[0])
 
 // Function for next button 
@@ -244,3 +245,44 @@ document.addEventListener('DOMContentLoaded', () => {
   // Put the elements back into the container
   elements.forEach(e => container.appendChild(e))
 })
+
+
+
+
+
+
+
+//Weather App Javascript
+// const apiKey = 'YOUR_API_KEY';
+const apiUrl = 'https://api.openweathermap.org/data/2.5/weather';
+const apiKey = '5d57be01df549f0e6eb4ae1e8b85c45f'
+
+const locationInput = document.getElementById('locationInput');
+const searchButton = document.getElementById('searchButton');
+const locationElement = document.getElementById('location');
+const temperatureElement = document.getElementById('temperature');
+const descriptionElement = document.getElementById('description');
+
+searchButton.addEventListener('click', () => {
+    const location = locationInput.value;
+    if (location) {
+        fetchWeather(location);
+    }
+});
+
+function fetchWeather(location) {
+  const url = `${apiUrl}?q=${location}&appid=${apiKey}&units=metric`;
+
+  fetch(url)
+      .then(response => response.json())
+      .then(data => {
+          locationElement.textContent = data.name;
+          temperatureElement.textContent = `${Math.round(data.main.temp)}°C`;
+          descriptionElement.textContent = data.weather[0].description;
+      })
+      .catch(error => {
+          console.error('Error fetching weather data:', error);
+      });
+}
+
+

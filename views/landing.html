@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Alligator</title>
-    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <!-- <link rel="stylesheet" type= "text/css" href="../assets/css/style.css"> -->
 </head>
 <body>
 
@@ -123,11 +124,21 @@
 
         <div class="grid-container">
             <div class="item1">1
-                <div class="search-box">
+                <!-- <div class="search-box">
                     <i class="bx bxs-map"></i>
                     <input type = "text" placeholder="what city you repping?">
                     <button class="bx bx-search"></button>
-                </div>
+                </div> -->
+                <div class="weatherContainer">
+                  <h1>Weather App</h1>
+                  <input type="text" id="locationInput" placeholder="Enter a city">
+                  <button id="searchButton">Search</button>
+                  <div class="weather-info">
+                      <h2 id="location"></h2>
+                      <p id="temperature"></p>
+                      <p id="description"></p>
+                  </div>
+              </div>
             </div>
             <div class="item2">2
 
