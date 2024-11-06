@@ -285,3 +285,10 @@ function fetchWeather(location) {
 }
 
 
+
+
+
+
+
+
+

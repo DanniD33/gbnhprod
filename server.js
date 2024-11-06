@@ -13,7 +13,9 @@ app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, '/views/landing.html'))
 })
 
-app.use('/static', express.static(path.join(__dirname, 'assets')))
+// app.use('/static', express.static(path.join(__dirname, 'assets')))
+app.use(express.static(path.join(__dirname, 'assets')))
+
 // app.use('assets', express.static(path.join(__dirname, './assetss')));
 // app.use(express.static(path.join(__dirname, './views')));
 
