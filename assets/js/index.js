@@ -253,6 +253,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 //Weather App Javascript
+
+//grab coordinates and and plug them into api
+// `https://api.api-ninjas.com/v1/geocoding?city=${location}&country=UnitedStates`
+// const locate = 'https://api.weather.gov/points/{longitude, latitude}';
+
+// const endpoint = 'https://api.weather.gov/gridpoints/OKX/33,35/forecast/hourly';
+// let cityforecast = 'https://api.weather.gov/gridpoints/OKX/33,35/forecast';
+// const gridpoints = 'https://api.weather.gov/gridpoints';
+// const locate = 'https://api.weather.gov/points/38.8894,-77.0352';
+
 // const apiKey = 'YOUR_API_KEY';
 const apiUrl = 'https://api.openweathermap.org/data/2.5/weather';
 const apiKey = '5d57be01df549f0e6eb4ae1e8b85c45f'
@@ -277,7 +287,11 @@ function fetchWeather(location) {
       .then(response => response.json())
       .then(data => {
           locationElement.textContent = data.name;
-          temperatureElement.textContent = `${Math.round(data.main.temp)}°C`;
+          const cToF = (temp) => {
+              return (temp * 9/5) + 32
+            }
+            // console.log(cToF(Math.round(data.main.temp)));
+            temperatureElement.textContent = `${Math.round(data.main.temp)}°C / ${cToF(Math.round(data.main.temp))}°F`;
           descriptionElement.textContent = data.weather[0].description;
       })
       .catch(error => {
@@ -286,3 +300,9 @@ function fetchWeather(location) {
 }
 
 
+//Weather 
+/*
+1.) Search -> trigger api for coordinates
+2.) Get coordinates for the last few tour stops
+3.) Figure out closest tour stop
+*/
