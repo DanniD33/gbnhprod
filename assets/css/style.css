@@ -465,11 +465,13 @@ header a:hover{
     border-radius: 100px;
     /* z-index: -1; 
     position: relative; */
-    /* background-image: url("assets/swamp.jpg"); */
+    
+    background-image: url("../assetsG/swampsketch.png");
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
+    /* background-color: hotpink; */
     /* background-color: rgb(255, 255, 255, 0.25); */
-    background-color: rgb(216, 228, 233, 0.1);
+    /* background-color: rgb(216, 228, 233, 0.1); */
     position:absolute;
     /* top:30%;
     left:30%;  */
